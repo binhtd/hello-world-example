@@ -1,8 +1,7 @@
 node('slave-docker-04') {
 checkout scm
 stage('build') {
-    withMaven(maven: 'Default Maven') {
-        /* .. some comment .. */
+   withMaven(jdk: 'Default Java', maven: 'Default Maven') {
     sh 'mvn clean install'
 }
 }
